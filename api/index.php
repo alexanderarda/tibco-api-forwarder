@@ -13,5 +13,7 @@ $json = '{
 }
 ';
 
-echo json_encode($json, JSON_PRETTY_PRINT)
+//echo json_encode($json, JSON_PRETTY_PRINT);
+echo $json;
+header('Content-Type: application/json');
 ?>
