@@ -1,15 +1,29 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alexa
- * Date: 8/9/2018
- * Time: 11:44 AM
- */
+
 
 namespace App\Http\Controllers;
 
 
-class ApiController
-{
+use GuzzleHttp\Client;
+
+class ApiController{
+
+    public function getBalance($accNo){
+
+        $client = new Client([
+            'base_uri' => 'http://dki.herokuapp.com'
+        ]);
+
+        $response = $client->get('api');
+
+        echo '<pre>'; dd($response);
+
+        echo $accNo;
+    }
+
+    public function getHistory($accNo){
+        echo $accNo;
+    }
+
 
 }

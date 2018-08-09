@@ -1,4 +1,5 @@
-{
+<?php
+$json = '{
   "transaction_time": "2018-04-17 07:50:42",
   "transaction_status": "settlement",
   "transaction_id": "8a46ff5a-c588-4098-a160-6e3d0680accb",
@@ -10,3 +11,7 @@
   "order_id": "041712-62-ISO.1-015-OWD-00234",
   "gross_amount": "10001.00"
 }
+';
+
+json_encode($json, JSON_PRETTY_PRINT)
+?>
