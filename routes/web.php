@@ -17,8 +17,7 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'balance'], function () use ($router) {
 
-    //$router->get('/inquiry/{accNo}', 'ApiController@getBalance');
-    $router->get('/inquiry', 'ApiController@getBalance');
+    $router->get('/inquiry/{accNo}', 'ApiController@getBalance');
     $router->get('/history/{accNo}', 'ApiController@getHistory');
 
 });

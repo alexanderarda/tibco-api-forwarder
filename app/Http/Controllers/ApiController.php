@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 
 class ApiController{
@@ -14,19 +15,19 @@ class ApiController{
     private $clientEndpoint;
     public function __construct()
     {
-        $this->clientEndpoint = 'http://dki.herokuapp.com';
+        $this->clientEndpoint = 'http://117.54.138.44:8889';
     }
 
-    public function getBalance(Request $request){
+    public function getBalance($accNo){
 
-        $accNo = $request->input('accno');
 
         try {
-        $client = new Client([
-            'base_uri' => $this->clientEndpoint
-        ]);
 
-        $response = $client->get($accNo);
+            $client = new Client();
+
+            $response = $client->post($this->clientEndpoint.'/inquirybal', [
+                RequestOptions::JSON => ['accnumber' => $accNo]
+            ]);
 
             return response($response->getBody())
                 ->header('Content-Type', 'application/json');
@@ -43,8 +44,6 @@ class ApiController{
 
             }
         }
-
-
 
     }
 
@@ -52,18 +51,20 @@ class ApiController{
 
 
         try {
-            $client = new Client([
-                'base_uri' => $this->clientEndpoint
-            ]);
 
-            $response = $client->get($accNo);
+            $client = new Client();
+
+            $response = $client->post($this->clientEndpoint.'/inquirybal', [
+                RequestOptions::JSON => ['accnumber' => $accNo]
+            ]);
 
             return response($response->getBody())
                 ->header('Content-Type', 'application/json');
 
         } catch (RequestException $e) {
-            //echo Psr7\str($e->getRequest());
+
             if ($e->hasResponse()) {
+
                 $err =  Psr7\str($e->getResponse());
 
                 return response()->json([
@@ -72,6 +73,7 @@ class ApiController{
 
             }
         }
+
     }
 
 
