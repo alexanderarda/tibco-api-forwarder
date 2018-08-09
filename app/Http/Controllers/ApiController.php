@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
+use Illuminate\Http\Request;
 
 class ApiController{
 
@@ -16,8 +17,9 @@ class ApiController{
         $this->clientEndpoint = 'http://dki.herokuapp.com';
     }
 
-    public function getBalance($accNo){
+    public function getBalance(Request $request){
 
+        $accNo = $request->input('accno');
 
         try {
         $client = new Client([
