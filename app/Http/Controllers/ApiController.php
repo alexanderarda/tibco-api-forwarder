@@ -18,6 +18,9 @@ class ApiController{
         $this->clientEndpoint = 'http://117.54.138.44:8889';
     }
 
+
+# GET user balance
+
     public function getBalance($accNo){
 
 
@@ -46,6 +49,9 @@ class ApiController{
         }
 
     }
+
+
+# GET user history
 
     public function getHistory($accNo){
 
@@ -76,5 +82,70 @@ class ApiController{
 
     }
 
+# POST user balance
+
+    public function postBalance(Request $request){
+
+        $data = $request->all();
+        $accNo = $data['accnumber'];
+
+        try {
+
+            $client = new Client();
+
+            $response = $client->post($this->clientEndpoint.'/inquirybal', [
+                RequestOptions::JSON => ['accnumber' => $accNo]
+            ]);
+
+            return response($response->getBody())
+                ->header('Content-Type', 'application/json');
+
+        } catch (RequestException $e) {
+
+            if ($e->hasResponse()) {
+
+                $err =  Psr7\str($e->getResponse());
+
+                return response()->json([
+                    'message' => $err,
+                ], 404);
+
+            }
+        }
+
+    }
+
+# POST user history
+
+    public function postHistory(Request $request){
+
+        $data = $request->all();
+        $accNo = $data['accnumber'];
+
+        try {
+
+            $client = new Client();
+
+            $response = $client->post($this->clientEndpoint.'/inquirybal', [
+                RequestOptions::JSON => ['accnumber' => $accNo]
+            ]);
+
+            return response($response->getBody())
+                ->header('Content-Type', 'application/json');
+
+        } catch (RequestException $e) {
+
+            if ($e->hasResponse()) {
+
+                $err =  Psr7\str($e->getResponse());
+
+                return response()->json([
+                    'message' => $err,
+                ], 404);
+
+            }
+        }
+
+    }
 
 }
