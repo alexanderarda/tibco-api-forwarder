@@ -162,6 +162,11 @@ class ApiController{
 
         return "successfully deleted = ".$accNo;
 
+        return response()->json([
+            'acc_number' => $accNo,
+            'message' => 'uccessfully deleted',
+        ], 200);
+
     }
 
 }
