@@ -29,4 +29,6 @@ $router->group(['prefix' => 'balance'], function () use ($router) {
 
     $router->delete('/inquiry/delete/{id}', 'ApiController@deleteBalance');
 
+    $router->put('/inquiry/put', 'ApiController@putBalance');
+
 });

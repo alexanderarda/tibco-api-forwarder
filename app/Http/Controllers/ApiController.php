@@ -85,7 +85,8 @@ class ApiController{
 
     public function postBalance(Request $request){
 
-        $data = $request->all();
+        $data = $request->json()->all();
+
         $accNo = $data['accnumber'];
 
         try {
@@ -156,7 +157,7 @@ class ApiController{
 
 
 
-# POST user balance
+# DELETE user balance
 
     public function deleteBalance($accNo){
 
@@ -167,5 +168,23 @@ class ApiController{
         ->header('Content-Type', 'application/json');
 
     }
+
+
+# PUT user balance
+
+    public function putBalance(Request $request){
+
+        $data = $request->json()->all();
+        $accNo = $data['accnumber'];
+
+        return response()->json([
+            'acc_number' => $accNo,
+            'message' => 'successfully created',
+        ], 200)
+            ->header('Content-Type', 'application/json');
+
+    }
+
+
 
 }
