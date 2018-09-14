@@ -160,12 +160,11 @@ class ApiController{
 
     public function deleteBalance($accNo){
 
-        return "successfully deleted = ".$accNo;
-
         return response()->json([
             'acc_number' => $accNo,
-            'message' => 'uccessfully deleted',
-        ], 200);
+            'message' => 'successfully deleted',
+        ], 200)
+        ->header('Content-Type', 'application/json');
 
     }
 
