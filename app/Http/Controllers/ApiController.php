@@ -55,7 +55,6 @@ class ApiController{
 
     public function getHistory($accNo){
 
-
         try {
 
             $client = new Client();
