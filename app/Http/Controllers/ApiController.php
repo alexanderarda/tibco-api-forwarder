@@ -148,16 +148,20 @@ class ApiController{
     }
 
 
-
 # OPTION user balance
 
-    public function getOption($accNo){
-
-
+    public function testOption($accNo){
         return $accNo;
-
-
     }
 
+
+
+# POST user balance
+
+    public function deleteBalance($accNo){
+
+        return "successfully deleted = ".$accNo;
+
+    }
 
 }
