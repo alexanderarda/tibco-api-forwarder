@@ -147,4 +147,17 @@ class ApiController{
 
     }
 
+
+
+# OPTION user balance
+
+    public function getOption($accNo){
+
+
+        return $accNo;
+
+
+    }
+
+
 }

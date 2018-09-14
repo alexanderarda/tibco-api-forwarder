@@ -21,7 +21,7 @@ $router->group(['prefix' => 'balance'], function () use ($router) {
     $router->get('/inquiry/{accNo}', 'ApiController@getBalance');
     $router->get('/history/{accNo}', 'ApiController@getHistory');
 
-    $router->option('/inquiry/{accNo}', 'ApiController@getBalance');
+    $router->option('/inquiry/{accNo}', 'ApiController@getOption');
     $router->option('/history/{accNo}', 'ApiController@getHistory');
 
 
