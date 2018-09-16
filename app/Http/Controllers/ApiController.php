@@ -23,7 +23,7 @@ class ApiController{
 
     public function getBalance($accNo){
 
-        set_time_limit(100);
+        set_time_limit(500);
 
         try {
 
