@@ -87,6 +87,8 @@ class ApiController{
 
         $data = $request->json()->all();
 
+        dd($data);
+
         $accNo = $data['accnumber'];
 
         try {
