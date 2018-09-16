@@ -184,6 +184,21 @@ class ApiController{
 
     }
 
+# PATCH patchBalance
+
+    public function patchBalance(Request $request){
+
+        $data = $request->json()->all();
+        $accNo = $data['accnumber'];
+
+        return response()->json([
+            'acc_number' => $accNo,
+            'message' => 'field acc_number successfully updated',
+        ], 200)
+            ->header('Content-Type', 'application/json');
+
+    }
+
 
 
 }
