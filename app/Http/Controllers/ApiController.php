@@ -156,7 +156,6 @@ class ApiController{
     }
 
 
-
 # DELETE user balance
 
     public function deleteBalance($accNo){

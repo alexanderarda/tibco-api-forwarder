@@ -18,17 +18,23 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'balance'], function () use ($router) {
 
+
+    # GET
     $router->get('/inquiry/{accNo}', 'ApiController@getBalance');
     $router->get('/history/{accNo}', 'ApiController@getHistory');
 
+    # POST
     $router->post('/inquiry', 'ApiController@postBalance');
     $router->post('/history', 'ApiController@postHistory');
 
-    $router->options('/inquiry/{accNo}', 'ApiController@testOption');
-    $router->options('/history/{accNo}', 'ApiController@getHistory');
-
+    # DELETE
     $router->delete('/inquiry/delete/{id}', 'ApiController@deleteBalance');
 
+    # PUT
     $router->put('/inquiry/put', 'ApiController@putBalance');
+
+
+    $router->options('/inquiry/{accNo}', 'ApiController@testOption');
+    $router->options('/history/{accNo}', 'ApiController@getHistory');
 
 });
