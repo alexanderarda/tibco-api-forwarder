@@ -152,8 +152,22 @@ class ApiController{
 
 # OPTION user balance
 
-    public function testOption($accNo){
-        return $accNo;
+    public function optionsBalance($accNo){
+        return response()->json([
+            'acc_number' => $accNo,
+            'message' => 'allow options method',
+        ], 200)
+            ->header('Content-Type', 'application/json');
+    }
+
+# HEAD user balance
+
+    public function headBalance($accNo){
+        return response()->json([
+            'acc_number' => $accNo,
+            'message' => 'allow options method',
+        ], 200)
+            ->header('Content-Type', 'application/json');
     }
 
 

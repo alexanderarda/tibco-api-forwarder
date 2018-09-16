@@ -37,8 +37,12 @@ $router->group(['prefix' => 'balance'], function () use ($router) {
     # PATCH
     $router->patch('/inquiry/patch', 'ApiController@patchBalance');
 
+    # OPTIONS
+    $router->options('/inquiry/options/{accNo}', 'ApiController@optionsBalance');
 
-    $router->options('/inquiry/{accNo}', 'ApiController@testOption');
+    # HEAD
+    $router->head('/inquiry/head/{accNo}', 'ApiController@headBalance');
+
     $router->options('/history/{accNo}', 'ApiController@getHistory');
 
 });
