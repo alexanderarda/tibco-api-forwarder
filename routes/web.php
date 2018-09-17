@@ -30,18 +30,22 @@ $router->group(['prefix' => 'balance'], function () use ($router) {
     # DELETE
     $router->delete('/inquiry/delete/{id}', 'ApiController@deleteBalance');
 
-    # PUT
-    $router->put('/inquiry/put', 'ApiController@putBalance');
-
-
-    # PATCH
-    $router->patch('/inquiry/patch', 'ApiController@patchBalance');
-
     # OPTIONS
     $router->options('/inquiry/{accNo}', 'ApiController@optionsBalance');
 
     # HEAD
     $router->head('/inquiry/{accNo}', 'ApiController@headBalance');
+
+    # POST
+    $router->post('/inquiry', 'ApiController@postBalance');
+    $router->post('/history', 'ApiController@postHistory');
+
+    # PUT
+    $router->put('/inquiry', 'ApiController@putBalance');
+
+    # PATCH
+    $router->patch('/inquiry', 'ApiController@patchBalance');
+
 
 
 });
