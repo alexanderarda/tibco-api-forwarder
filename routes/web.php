@@ -27,6 +27,8 @@ $router->group(['prefix' => 'balance'], function () use ($router) {
     $router->post('/inquiry', 'ApiController@postBalance');
     $router->post('/history', 'ApiController@postHistory');
 
+    $router->post('/dummy', 'ApiController@postDummy');
+
     # DELETE
     $router->delete('/inquiry/delete/{id}', 'ApiController@deleteBalance');
 

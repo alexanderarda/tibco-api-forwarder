@@ -149,6 +149,15 @@ class ApiController{
 
     }
 
+    public function postDummy(){
+
+        return response()->json([
+            'status' => 'OK',
+            'message' => 'allow dumy method',
+        ], 200)
+            ->header('Content-Type', 'application/json');
+
+    }
 
 # OPTION user balance
 
