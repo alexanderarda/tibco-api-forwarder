@@ -163,19 +163,8 @@ class ApiController{
     public function postDummyInq(){
 
         return response()->json([
-            'PAN' => '504948251030108422',
-            'PROCESSING_CODE' => '740014',
-            'TRANSMISSION_DATE_AND_TIME' => '0917182548',
-            'SYSTEMS_TRACE_AUDIT_NUMBER' => '000066',
-            'TIME_LOCAL_TRANSACTION' => '182548',
-            'DATE_LOCAL_TRANSACTION' => '0917',
-            'MERCHANT_TYPE' => '6017',
-            'ACQUIRING_INSTITUTION_IDENTIFICATION_CODE' => '111',
-            'FORWARDING_INSTITUTION_IDENTIFICATION_CODE' => '111',
-            'RETRIEVAL_REFERENCE_NUMBER' => '180917000066',
-            'RESPONSE_CODE' => '68',
-            'CARD_ACCEPTOR_TERMINAL_IDENTIFICATION' => 'JAKONE',
-            'ADDITIONAL_DATA' => '401201087061235',
+            'PAN' => 'xxx',
+            'PROCESSING_CODE' => 'xxx'
 
         ], 200)
             ->header('Content-Type', 'application/json');
