@@ -15,7 +15,8 @@ class ApiController{
     private $clientEndpoint;
     public function __construct()
     {
-        $this->clientEndpoint = 'http://117.54.138.44:8889';
+        # Place your endpoint URL here
+        $this->clientEndpoint = 'http://localhost:8889';
     }
 
 
